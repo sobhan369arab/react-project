@@ -3,14 +3,18 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
-
+function Home() {
   return (
-    <>
-    
-    </>
+    // <>
+    <div className='Menu'>
+      <div> <h1>Sobhan </h1> </div> 
+        <ul>
+
+        </ul>
+    </div>
+
+    // </>
   )
 }
 
-export default App
+export {Home}

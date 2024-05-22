@@ -1,0 +1,19 @@
+body{
+    margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: #333;
+}
+.Menu{
+    position: relative;
+    border: 1px solid #000;
+    height: 738px;
+    width: 22%;
+    background: #666;
+    padding: 40px 0px 0px 20px;
+    
+}
+h1{
+    color: #fff;
+    font-size: 18px;
+}
