@@ -1,0 +1,84 @@
+.form-wrapper {
+    border: 1px solid #cac7c779;
+    border-radius: 20px;
+    margin: 20px 0px 0px 60px;
+    height: 500px;
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+
+}
+
+/* leftForm */
+.form-wrapper .leftForm {
+    /* border: 1px solid #fff; */
+    width: 55%;
+}
+
+.form-wrapper .leftForm .titleForm {
+    /* border: 1px solid #fff; */
+    padding: 10px;
+    box-shadow: 0px 0px 10px 1px #ccc inset;
+    margin: 10px 0px 0px 150px;
+    display: inline-block;
+    font-size: 20px;
+    color: #999;
+    font-size: "";
+}
+
+.form-wrapper .leftForm form {
+    /* border: 1px solid #fff; */
+    transition: all 0.3s ease;
+}
+
+.form-wrapper .leftForm form .data {
+    /* height: 70px; */
+    width: 100%;
+    margin-top: 12px;
+}
+
+.form-wrapper .leftForm form .data label {
+    font-size: 18px;
+    color: #999 !important;
+}
+
+.form-wrapper .leftForm form .data input {
+    height: 30px;
+    width: 97%;
+    font-size: 17px;
+    border: 1px solid silver;
+}
+
+.form-wrapper .leftForm form .data input:focus {
+    border-color: #576d7c;
+    border-bottom-width: 2px;
+}
+
+.form-wrapper .leftForm form .Btn {
+    height: 33px;
+    width: 80%;
+    display: block;
+    margin:25px auto ;
+    color: #111;
+    background: #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}
+.error{
+    color: red;
+    font-size: 14px;
+    /* border: 2px solid silver; */
+    margin-top: 0px;
+}
+
+/* rightForm */
+.form-wrapper .rightForm {
+    /* border: 1px solid red; */
+    width: 36%;
+    padding-top: 50px;
+}
+.form-wrapper .rightForm .parts .downItems{
+    display: none;
+}

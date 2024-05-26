@@ -1,0 +1,33 @@
+@font-face {
+    font-family:"sans"; 
+    src: url("../fonts/IRANSans.ttf");
+}
+@font-face {
+    src: url("../fonts/Yekan.ttf");
+    font-family: "yek";
+}
+
+@font-face {
+    src: url("../fonts/Ramsar.ttf");
+    font-family: "ram";
+}
+
+@font-face {
+    src: url("../fonts/Mj flow.ttf");
+    font-family: "mj";
+}
+
+@font-face {
+    src: url("../fonts/nasim.ttf");
+    font-family: "nas";
+}
+
+@font-face {
+    src: url("../fonts/Roya.ttf");
+    font-family: "roya";
+}
+
+@font-face {
+    src: url("../fonts/Vazir-Bold.ttf");
+    font-family: "vazir";
+}

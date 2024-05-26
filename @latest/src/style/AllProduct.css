@@ -1,0 +1,31 @@
+.container{
+    background: #333;
+    width: 78%;
+    height: 100%;
+    position: absolute;
+    left:22%;
+    overflow-y: hidden;
+}
+.title{
+    border: 1px solid #000;
+    background: #666;
+    height: 50px;
+    width: 15%;
+    margin: 30px 0px 0px 30px;
+    font-size: 25px;
+    color: #fff;
+    text-align: center;
+    line-height: 52px;
+    border-radius: 10px;
+    
+}
+.content{
+    /* border: 1px solid #fff; */
+    margin-top: 10px;
+    height: 615px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    overflow-y: scroll;
+    
+}
