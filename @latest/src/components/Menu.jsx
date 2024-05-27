@@ -12,7 +12,6 @@ const Menu = () => {
             <ul>
                 <li className='items' onClick={ () => { Navigate('/AllProduct')  }}> <h1> All Product </h1> </li>
                 <li className='items' onClick={ () => { Navigate('/AddProduct')  }}> <h1> Add Product </h1> </li>
-                <li className='items'> <h1> Edit Product </h1> </li>
             </ul>
         </div>
         {/* <AllProduct /> */}
