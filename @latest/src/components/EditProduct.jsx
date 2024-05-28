@@ -2,18 +2,13 @@ import React from 'react'
 import '../style/AddProduct.css';
 import * as yup from "yup";
 import { Formik } from "formik";
-// import axios from 'axios';
+import axios from 'axios';
 import { useLocation } from 'react-router-dom';
-
-// import '../style/AddProduct.css';
-// import '../style/fonts.css';
-// import { Outlet } from 'react-router-dom'
-
 import { Menu } from "./Menu"
 import { Product } from './Product';
 import FormProduct from './Form';
 
-const EditProduct = () => {
+const EditProduct = ({carList}) => {
     const validation = yup.object().shape({
         name: yup.string().required("The Name Cannot Be !!"),
         score: yup.number().min(0).max(10).required("The Score Cannot Be !!"),
@@ -22,17 +17,17 @@ const EditProduct = () => {
 
     })
 
-    /* Add product by post  */
+    /* Edit product by post  */
     const onEdit = async (values) => {
-        const obj = { name: values.name, score: values.score, color: values.color, price: values.price }
-        const obj2 = values.id ;
-        console.log(obj2);
+        // console.log(values);
 
-        // await axios.put(`https://6653aa591c6af63f46754aa6.mockapi.io/users${obj2 }`, obj)
+        await axios.put(`https://6653aa591c6af63f46754aa6.mockapi.io/users/${editId.state.id}`, values)
+        alert("is edit successful")
         // setCarList([...carList, obj]);
+        const newCarList = carList.find(f => f.id === editId.state.id);
+            Object.assign(newCarList,values)
     };
     const editId = useLocation();
-    // console.log(editId.name);
     
     return (
         <>
@@ -40,7 +35,7 @@ const EditProduct = () => {
             <div className='container'>
                 <div className='title'> Edit Product </div>
                 <Formik
-                    initialValues={{ name:editId , score: "score", color: "color", price: "price", }}
+                    initialValues={{ name:editId.state.name, score: editId.state.score, color: editId.state.color, price: editId.state.price }}
                     onSubmit={(values) => onEdit(values)}
                     validationSchema={validation}
                 >
@@ -57,7 +52,6 @@ const EditProduct = () => {
                                     score={form.values.score}
                                     color={form.values.color}
                                     price={form.values.price}
-                                    // conter={[]}
                                 />
                             </div>
 

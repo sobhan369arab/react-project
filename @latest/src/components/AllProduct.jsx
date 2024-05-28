@@ -1,19 +1,17 @@
 import '../style/AllProduct.css';
 import axios from 'axios';
-// import '../style/fonts.css';
-// import { Outlet } from 'react-router-dom'
-
 import { Menu } from "./Menu";
 import { Product } from './Product';
 
-const AllProduct = ({ carList}) => {
+const AllProduct = ({ carList,setCarList}) => {
 
   /* Remove the product by delete */
     const handleDelete = async (ProductId) => {
         console.log(ProductId);
         await axios.delete(`https://6653aa591c6af63f46754aa6.mockapi.io/users/${ProductId}`)
-        // const filterData = carList.filter(f => f.id !== ProductId);
-        // setCarList(filterData);
+        alert("is deleted successfully")
+        const filterData = carList.filter(f => f.id !== ProductId);
+        setCarList(filterData);
       }
     return (
         <>
@@ -25,6 +23,7 @@ const AllProduct = ({ carList}) => {
                         return (
                             <Product
                                 key={index}
+                                id={item.id}
                                 name={item.name}
                                 score={item.score}
                                 color={item.color}

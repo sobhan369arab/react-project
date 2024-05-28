@@ -4,15 +4,11 @@ import * as yup from "yup";
 import { Formik } from "formik";
 import axios from 'axios';
 
-// import '../style/AddProduct.css';
-// import '../style/fonts.css';
-// import { Outlet } from 'react-router-dom'
-
 import { Menu } from "./Menu"
 import { Product } from './Product';
 import FormProduct from './Form';
 
-const AddProduct = () => {
+const AddProduct = ({ carList, setCarList }) => {
     const validation = yup.object().shape({
         name: yup.string().required("The Name Cannot Be !!"),
         score: yup.number().min(0).max(10).required("The Score Cannot Be !!"),
@@ -24,9 +20,9 @@ const AddProduct = () => {
     /* Add product by post  */
     const onSubmit = async (values) => {
         const obj = { name: values.name, score: values.score, color: values.color, price: values.price }
-
         await axios.post(`https://6653aa591c6af63f46754aa6.mockapi.io/users`, obj)
-        // setCarList([...carList, obj]);
+        alert("create new product")
+        setCarList([...carList, obj]);
     };
     return (
         <>

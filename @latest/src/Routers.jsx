@@ -1,5 +1,4 @@
-// import React from 'react'
-// import ReactDOM from 'react-dom/client'
+
 import { Home } from './Home.jsx';
 import { AllProduct } from './components/AllProduct.jsx';
 import { Menu } from './components/Menu.jsx';
@@ -35,11 +34,11 @@ const Routers = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/Home' element={<Home carList={carList}  />} />
+        <Route path='/Home' element={<Home carList={carList} />} />
         <Route path='/Menu' element={<Menu />} />
-        <Route path='/AllProduct' element={<AllProduct carList={carList}  />} />
-        <Route path='/AddProduct' element={<AddProduct  />} />
-        <Route path='/EditProduct' element={<EditProduct  />} />
+        <Route path='/AllProduct' element={<AllProduct carList={carList} setCarList={setCarList} />} />
+        <Route path='/AddProduct' element={<AddProduct carList={carList} setCarList={setCarList} />} />
+        <Route path='/EditProduct' element={<EditProduct carList={carList} />} />
         <Route path='/' element={<Navigate replace to='/Home' />} />
       </Routes>
 

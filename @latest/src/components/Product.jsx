@@ -8,7 +8,7 @@ const Product = ({id,name,score,color,price,onDelete,carList}) => {
     const handleEdit = (productId)=>{
         const EditObj = carList.find(f => f.id === productId)
         Navigate('/EditProduct' , {state:EditObj})
-    console.log(productId);
+    // console.log(carList);
 
     }
     return (
@@ -22,7 +22,7 @@ const Product = ({id,name,score,color,price,onDelete,carList}) => {
                 <div className='element price'> price : {price} $ </div>    
             </div>
             <div className='downItems'> 
-                <button className='Btn edit' onClick={()=>{handleEdit(productId)}} > EDIT</button>
+                <button className='Btn edit' onClick={()=>{handleEdit(id)}} > EDIT</button>
                 <button className='Btn delete' onClick={onDelete}> DELETE</button>
             </div>
             {/* conter[name,score,color,price]  */}
