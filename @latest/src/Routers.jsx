@@ -37,7 +37,7 @@ const Routers = () => {
         <Route path='/Home' element={<Home carList={carList} />} />
         <Route path='/Menu' element={<Menu />} />
         <Route path='/AllProduct' element={<AllProduct carList={carList} setCarList={setCarList} />} />
-        <Route path='/AddProduct' element={<AddProduct carList={carList} setCarList={setCarList} />} />
+        <Route path='/AddProduct' element={<AddProduct carList={carList} setCarList={setCarList}   getCarList={getCarList}/>} />
         <Route path='/EditProduct' element={<EditProduct carList={carList} />} />
         <Route path='/' element={<Navigate replace to='/Home' />} />
       </Routes>

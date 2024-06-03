@@ -8,7 +8,7 @@ const Menu = () => {
         return (
     <>
         <div className='Menu'>
-            <div> <h1>Sobhan</h1> </div>
+            <div> <h1 className="text-red-700">Sobhan</h1> </div>
             <ul>
                 <li className='items' onClick={ () => { Navigate('/AllProduct')  }}> <h1> All Product </h1> </li>
                 <li className='items' onClick={ () => { Navigate('/AddProduct')  }}> <h1> Add Product </h1> </li>

@@ -7,8 +7,12 @@ import { useLocation } from 'react-router-dom';
 import { Menu } from "./Menu"
 import { Product } from './Product';
 import FormProduct from './Form';
+import { Success, Error } from './toast';
 
-const EditProduct = ({carList}) => {
+// import toast from 'react-hot-toast';
+// import toast from 'react-hot-toast';
+
+const EditProduct = ({ carList }) => {
     const validation = yup.object().shape({
         name: yup.string().required("The Name Cannot Be !!"),
         score: yup.number().min(0).max(10).required("The Score Cannot Be !!"),
@@ -17,25 +21,33 @@ const EditProduct = ({carList}) => {
 
     })
 
+
     /* Edit product by post  */
     const onEdit = async (values) => {
         // console.log(values);
+        try {
+            await axios.put(`https://6653aa591c6af63f46754aa6.mockapi.io/users/${editId.state.id}`, values)
+            // setCarList([...carList, obj]);
+            const newCarList = carList.find(f => f.id === editId.state.id);
+            Object.assign(newCarList, values)
+            // notify();
+            Success('the Product was successfully updated')
 
-        await axios.put(`https://6653aa591c6af63f46754aa6.mockapi.io/users/${editId.state.id}`, values)
-        alert("is edit successful")
-        // setCarList([...carList, obj]);
-        const newCarList = carList.find(f => f.id === editId.state.id);
-            Object.assign(newCarList,values)
+        } catch {
+            Error('please try again')
+        }
+
+
     };
     const editId = useLocation();
-    
+
     return (
         <>
             <Menu />
             <div className='container'>
                 <div className='title'> Edit Product </div>
                 <Formik
-                    initialValues={{ name:editId.state.name, score: editId.state.score, color: editId.state.color, price: editId.state.price }}
+                    initialValues={{ name: editId.state.name, score: editId.state.score, color: editId.state.color, price: editId.state.price }}
                     onSubmit={(values) => onEdit(values)}
                     validationSchema={validation}
                 >
